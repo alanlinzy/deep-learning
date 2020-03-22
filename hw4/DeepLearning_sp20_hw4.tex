@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Homework 4\\
+600.482/682 Deep Learning\\
+Spring 2019}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\textbf{Due Sunday 3/15 11:59pm.\\
+Please submit a report (LaTeX generated PDF) \\ and the code to Gradescope with entry code 9G83Y7 \\
+Please start early as model training might take a long time \\
+and Kaggle will not accept late submission}
+
+\end{center}
+
+\section{Problem 1}
+
+Implement CNNs that classify images using PyTorch with the tricks and architectures you learned in the class.
+
+\paragraph{Dataset} Train and tune your network based on our modified version of \href{https://www.cs.toronto.edu/~kriz/cifar.html}{CIFAR-100}. Load the dataset with the code snippet provided in \url{https://www.kaggle.com/t/f63012ec31444360a7ae3afa3c6c884e}.
+
+The modified CIFAR-100 is a subset of the original CIFAR-100. Please do not train your network with the original CIFAR-100 dataset because we reserve some samples to test your network. Training on the original dataset disqualifies you for extra credit.
+
+\paragraph{Implementation} Implement 3 variants of models. You may come up with your own or use state-of-the-art models as a starting point. If you start with someone else's models, please do more than hyperparameter tuning. Cite anything that inspired you in your report. 
+
+You must use at least 2 of the following in each model and at least 5 across all models. You are free to use anything not listed here.
+
+\begin{enumerate}
+\item dropout
+\item batchnorm
+\item skip connection
+\item transfer learning
+\item data augmentation
+\item regularization
+\item batch size, learning rate, learning rate schedulers and different optimizers
+\end{enumerate}
+
+Please use a \href{https://pytorch.org/docs/stable/notes/randomness.html}{fixed random seed} for reproducibility.
+
+\textit{Note} The dataset is difficult. Do not be discouraged if you get 10\% initial accuracy. Anything above 50\% is very good. You will not be graded based on the test accuracy. 
+
+\paragraph{Deliverables and grading} 
+\begin{enumerate}
+\item An informal report. Briefly explain the highlights of each model and your intuitions. Include a dev accuracy and loss plot for your best-performing model. Present how the architecture and tricks affect the performance with \textit{abalation study tables}. Your report will be graded based on the depth of your analysis. Do not write an introduction. Max 2 pages.
+
+\textit{Tips:} An ablation study refers to removing some part of the model, and showing how that affects performance. For example, to show the benefit of using optimizer A vs B, train two identical models except using optimizer A or B, and see how it effect \textit{dev} set performance.
+
+\item Code. You can submit Jupyter Notebook (Google Colab) \texttt{.ipynb} or a Python project or both. If you have dependencies other than numpy and pytorch, please install them inline in Jupyter Notebook (for Google Colab) or provide a \texttt{requirements.txt}. Document how to run the training loop in your report. Provide high-level comments on what is not obvious. Your code will be graded based on consistency with the report, correctness, and good practice.
+\item Kaggle. Submit your test result to the Kaggle competition \url{https://www.kaggle.com/t/f63012ec31444360a7ae3afa3c6c884e}. You will receive a participation grade. The top 30\% participants will receive a extra credit. Please report your team name in the report.
+
+\textit{Tips: If you want to be anonymous on the leader board, please create a new temporary Kaggle account, \textbf{not revealing your name}.}
+\end{enumerate}
+
+\end{document}
